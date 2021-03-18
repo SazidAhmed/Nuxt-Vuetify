@@ -13,7 +13,7 @@
     <!-- Navbar End-->
     <v-main>
       <v-container>
-        <!--content -->
+        <!-- Main content -->
         <nuxt />
         <!--content End-->
       </v-container>
