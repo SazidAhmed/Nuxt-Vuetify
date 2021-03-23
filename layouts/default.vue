@@ -19,14 +19,6 @@
            oceanta.fashion@gmail.com
 
       </v-btn>
-        <v-text-field
-          flat
-          solo-inverted
-          hide-details
-          prepend-inner-icon="mdi-magnify"
-          label="Search"
-          class="hidden-sm-and-down"
-        ></v-text-field>
         <v-spacer></v-spacer>
         <v-btn text>
          <v-icon>mdi-home</v-icon>
@@ -59,7 +51,7 @@
       </v-container>
     </v-main>
     <!-- footer -->
-    <v-footer class="grey darken-4 py-4 white--text">
+    <v-footer class="grey darken-4 py-4 white--text" >
         <div class="container">
             <v-row>
                 <v-col cols="8" sm="4">
