@@ -176,7 +176,7 @@
         <template v-slot:default="{ hover }">
           <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="350"
           >
             <v-img height="300" src="https://static.ajkerdeal.com/images/deals/391900212195302/smallimage1.jpg"></v-img>
             <v-fade-transition>
@@ -203,7 +203,7 @@
           <template v-slot:default="{ hover }">
             <v-card
               class="mx-auto"
-              max-width="344"
+              max-width="350"
             >
               <v-img height="300" src="https://www.rightchoice.com.bd/media/catalog/product/cache/1/small_image/300x300/77c94543c5e78217e7ff5d5962f2ed86/l/x/lx_6637-1_jpg_02061805070811.jpg.png"></v-img>
               <v-fade-transition>
@@ -229,7 +229,7 @@
         <template v-slot:default="{ hover }">
           <v-card
             class="mx-auto"
-            max-width="344"
+            max-width="350"
           >
             <v-img height="300" src="https://images.othoba.com/images/thumbs/0197816_womens-georgette-embroidery-un-stitched-three-piece-replica-ctb-d-no-452_300.jpeg"></v-img>
             <v-fade-transition>
@@ -334,6 +334,7 @@
               >
                 <v-btn icon><v-icon>mdi-cart</v-icon></v-btn>
                 <v-btn icon><v-icon>mdi-eye</v-icon></v-btn>
+                <v-btn icon><v-icon>mdi-eye</v-icon></v-btn>
               </v-overlay>
             </v-fade-transition>
           </v-card>
@@ -352,7 +353,7 @@
     <v-card height="100px">
       <div class="container">
             <div class="section">
-                <h2>Best Sellings</h2>
+                <h2>Best Selling</h2>
             </div>
          </div>
     </v-card>
@@ -392,3 +393,88 @@ export default {
   }
 }
 </script>
+<style>
+
+.v-card--reveal {
+  align-items: center;
+  bottom: 0;
+  justify-content: center;
+  opacity: .5;
+  position: absolute;
+  width: 100%;
+}
+.section > h2 {
+
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1;
+}
+.sec > h2 {
+
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0;
+    position: relative;
+    text-transform: uppercase;
+    letter-spacing: 1;
+}
+.mt-5, .my-5 {
+    margin-top: 3rem!important;
+}
+
+
+
+
+
+
+.text-center {
+    text-align: center!important;
+}
+.sec > h2::before {
+    background-color: #49a514;
+    content: "";
+    height: 2px;
+    left: -81px;
+    position: absolute;
+    top: 19px;
+    width: 60px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.sec > h2::after {
+    background-color: #49a514;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -81px;
+    top: 19px;
+    width: 60px;
+}
+
+.section > h2::before {
+    background-color: #49a514;
+    content: "";
+    height: 2px;
+    left: -81px;
+    position: absolute;
+    top: 19px;
+    width: 60px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.section > h2::after {
+    background-color: #49a514;
+    content: "";
+    height: 2px;
+    position: absolute;
+    right: -81px;
+    top: 19px;
+    width: 60px;
+}
+
+</style>
