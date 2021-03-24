@@ -40,7 +40,7 @@
       </v-btn>
       <v-divider vertical></v-divider>
 
-      <v-btn text @click="createBtn"><v-icon dark small> mdi-plus </v-icon>sign in</v-btn>
+      <v-btn text ><v-icon dark small> mdi-plus </v-icon>sign in</v-btn>
       </v-app-bar>
     <!-- Navbar End-->
     <v-main>
