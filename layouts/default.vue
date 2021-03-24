@@ -130,28 +130,28 @@
             </v-row>
 
         </div>
-</v-footer>
-<v-card>
-  <v-row no-gutters
-       class="grey darken-3 py-2 text-center white--text "
-       >
-      <v-col
+    </v-footer>
+    <v-card>
+    <v-row no-gutters
+        class="grey darken-3 py-2 text-center white--text "
+        >
+        <v-col
 
-        cols="12"
-        sm="4"
-      >
-         <small>Help Center</small>
-      </v-col>
-      <v-spacer></v-spacer>
-      <v-col
+            cols="12"
+            sm="4"
+        >
+            <small>Help Center</small>
+        </v-col>
+        <v-spacer></v-spacer>
+        <v-col
 
-        cols="12"
-        sm="4"
-      >
-       <span>Copyright © Oceanta Fashion 2020 . All Right Reserved.</span>
-      </v-col>
-    </v-row>
-</v-card>
+            cols="12"
+            sm="4"
+        >
+        <span>Copyright © Oceanta Fashion 2020 . All Right Reserved.</span>
+        </v-col>
+        </v-row>
+    </v-card>
     <!-- footer End-->
   </v-app>
 </template>
