@@ -316,7 +316,6 @@
                     >
                       <v-btn icon><v-icon>mdi-cart</v-icon></v-btn>
                       <v-btn icon><v-icon>mdi-eye</v-icon></v-btn>
-                      <v-btn icon><v-icon>mdi-eye</v-icon></v-btn>
                     </v-overlay>
                   </v-fade-transition>
                 </v-card>
@@ -333,7 +332,7 @@
         <v-card height="100px">
           <div class="container">
                 <div class="section">
-                    <h2>Best Selling</h2>
+                    <h2>Best Sellings</h2>
                 </div>
             </div>
         </v-card>
