@@ -1,47 +1,46 @@
 <template>
-  <v-app>
     <!-- navbar -->
-    <v-app-bar
-        app
-        color="blue darken-3"
-        dark
-
-      >
-        <v-btn text>
+    <v-app>
+           <v-toolbar flat class="mainHeader" color="primary lighten-4">
+      <v-btn text>
         <v-icon>mdi-phone</v-icon>
         01706494553
       </v-btn>
-
       <v-divider vertical></v-divider>
-
       <v-btn text>
          <v-icon> mdi-email</v-icon>
-           oceanta.fashion@gmail.com
-
+           oceanta@gmail.com
       </v-btn>
-        <v-spacer></v-spacer>
-        <v-btn text>
-         <v-icon>mdi-home</v-icon>
-          Home
-      </v-btn>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="hidden-xs-only">
+        <v-btn text><v-icon>mdi-home</v-icon><router-link to="/">Home</router-link></v-btn>
+        <v-btn text><router-link to="/shop">Shop</router-link></v-btn>
+        <v-btn text><router-link to="/login">Login</router-link></v-btn>
+        <v-btn text><router-link to="/register">Register</router-link></v-btn>
+      </v-toolbar-items>
+      <div class="hidden-sm-and-up">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
+          </template>
+          <v-list class="responsiveMenu">
+            <v-list-item>
+              <v-list-item-title><router-link to="/">Home</router-link></v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title><router-link to="/shop">Shop</router-link></v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title><router-link to="/login">Login</router-link></v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title><router-link to="/register">Register</router-link></v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
+    </v-toolbar>
 
-      <v-divider vertical></v-divider>
-
-      <v-btn text>
-        <v-icon>mdi-flag</v-icon>
-         Shop
-      </v-btn>
-
-      <v-divider vertical></v-divider>
-
-      <v-btn text>
-        <v-icon> mdi-email</v-icon>
-         My Order
-      </v-btn>
-      <v-divider vertical></v-divider>
-
-      <v-btn text ><v-icon dark small> mdi-plus </v-icon>sign in</v-btn>
-      </v-app-bar>
     <!-- Navbar End-->
     <v-main>
       <v-container>
