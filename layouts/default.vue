@@ -1,7 +1,7 @@
 <template>
     <!-- navbar -->
     <v-app>
-           <v-toolbar flat class="mainHeader" color="primary lighten-4">
+    <v-toolbar flat class="mainHeader" color="primary lighten-4">
       <v-btn text>
         <v-icon>mdi-phone</v-icon>
         01706494553
@@ -40,7 +40,6 @@
         </v-menu>
       </div>
     </v-toolbar>
-
     <!-- Navbar End-->
     <v-main>
       <v-container>
