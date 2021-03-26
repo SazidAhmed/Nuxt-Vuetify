@@ -72,3 +72,10 @@ export default {
   })
 };
 </script>
+<style scoped>
+h2.text-center {
+    font-weight: bold;
+    font-size: 40px;
+    
+}
+</style>

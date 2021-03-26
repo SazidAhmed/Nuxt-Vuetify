@@ -50,7 +50,7 @@ export default {
       {
         id: 1,
         prize: "tk 1,000",
-        name: "Top western road trips",
+        name: "Top Western Dress",
         category: "Three-pice",
         src: require("../assets/images/threepice1.jpg")
       },
