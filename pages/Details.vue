@@ -6,7 +6,15 @@
         <v-col cols="auto" >
          <v-row wrap justify-space-between>
            <v-col cols="auto" >
-             <v-img width="400" class="mt-5" src="../assets/images/feature1.jpg"></v-img>
+              <v-col v-for="cat in cats" :key="cat.id" cols="12">
+             <v-img
+                          class="white--text align-end"
+                          height="100%"
+                          width="400"
+                          :src="cat.src"
+                        >
+                        </v-img>
+              </v-col>
            </v-col>
              <v-col cols="auto" >
                <v-col cols="auto">
@@ -44,6 +52,12 @@ export default {
   name: "Login",
   data: () => ({
 
+      cats: [
+          {
+            id: 1,
+            src: require("../assets/images/feature1.jpg")
+          }
+        ],
       tops: [
           {
             id: 1,
