@@ -2,20 +2,22 @@
     <div>
         <!--Top Navbar-->
         <v-toolbar flat class="mainHeader" color="grey lighten-4">
-            <v-btn plain>
-                <v-icon class="mr-1">mdi-phone</v-icon>
-                01706494553
-            </v-btn>
-            <v-btn plain>
-                <v-icon class="mr-1"> mdi-email</v-icon>
-                oceanta@gmail.com
-            </v-btn>
+            <v-toolbar-title class="ml-5 hidden-sm-and-down">
+                <v-btn plain>
+                    <v-icon class="mr-1">mdi-phone</v-icon>
+                    01706494553
+                </v-btn>
+                <v-btn plain>
+                    <v-icon class="mr-1"> mdi-email</v-icon>
+                    oceanta@gmail.com
+                </v-btn>
+            </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn plain><v-icon>mdi-home</v-icon> <NuxtLink to="/">Home</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/shop">Shop</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/login">Login</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/register">Register</NuxtLink></v-btn>
+            <v-toolbar-items class="hidden-sm-and-down mr-10">
+                <v-btn plain><v-icon>mdi-home</v-icon> <NuxtLink to="/" style="text-decoration: none; color: inherit;">Home</NuxtLink></v-btn>
+                <v-btn plain><NuxtLink to="/shop" style="text-decoration: none; color: inherit;">Shop</NuxtLink></v-btn>
+                <v-btn plain><NuxtLink to="/login" style="text-decoration: none; color: inherit;">Login</NuxtLink></v-btn>
+                <v-btn plain><NuxtLink to="/register" style="text-decoration: none; color: inherit;">Register</NuxtLink></v-btn>
             </v-toolbar-items>
         </v-toolbar>
         <!--Top Navbar End-->
@@ -65,7 +67,6 @@
                     <v-icon class="mr-1">mdi-account</v-icon>
                     Profile
                 </v-btn>
-
                 <v-btn plain class="mr-10">
                     <v-icon class="mr-1">mdi-cart</v-icon>
                     my cart
@@ -88,6 +89,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style >
+.removeLine{
+    text-decoration: none;
+ }
 </style>
