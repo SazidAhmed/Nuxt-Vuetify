@@ -1,11 +1,11 @@
 <template>
-  <v-content>
+  <v-main>
     <Hero />
     <Gallery />
     <LatestPost />
     <Features />
     <BestSellings />
-  </v-content>
+  </v-main>
 </template>
 
 <script>
