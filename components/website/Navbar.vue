@@ -92,5 +92,6 @@ export default {
 <style >
 .removeLine{
     text-decoration: none;
+    color: grey;
  }
 </style>
