@@ -18,6 +18,7 @@
                 <v-btn plain><NuxtLink to="/shop" style="text-decoration: none; color: inherit;">Shop</NuxtLink></v-btn>
                 <v-btn plain><NuxtLink to="/login" style="text-decoration: none; color: inherit;">Login</NuxtLink></v-btn>
                 <v-btn plain><NuxtLink to="/register" style="text-decoration: none; color: inherit;">Register</NuxtLink></v-btn>
+                <v-btn plain><NuxtLink to="/extra" style="text-decoration: none; color: inherit;">Extra</NuxtLink></v-btn>
             </v-toolbar-items>
         </v-toolbar>
         <!--Top Navbar End-->
@@ -44,6 +45,9 @@
                     </v-list-item>
                     <v-list-item>
                         <v-list-item-title><router-link to="/register">Profile</router-link></v-list-item-title>
+                    </v-list-item>
+                    <v-list-item>
+                        <v-list-item-title><router-link to="/extra">Extra</router-link></v-list-item-title>
                     </v-list-item>
                 </v-list>
                 </v-menu>
