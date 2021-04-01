@@ -44,7 +44,29 @@
            <v-btn>Add To Cart</v-btn>
         </v-col>
       </v-row>
-      </v-container>
+
+<!---colums--->
+
+   <v-container class="grey lighten-5">
+      <!-- product description -->
+
+      <div class="container">
+          <div class="text-center">
+                <v-btn text color="primary"><h3> Description</h3></v-btn>
+                <v-btn text color="primary"><h3> Additional Info</h3></v-btn>
+                <v-btn text color="primary"><h3> Review</h3></v-btn>
+
+
+          </div>
+      </div>
+   </v-container>
+
+   <v-container>
+     <h2 class="text-center">Features Product</h2>
+   </v-container>
+
+
+  </v-container>
 </template>
 
 <script>
@@ -78,3 +100,8 @@ export default {
 
 };
 </script>
+<style>
+  h3 {
+    font-size: 25px;
+}
+</style>
