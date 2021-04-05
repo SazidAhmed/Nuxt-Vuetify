@@ -107,8 +107,8 @@
                         color="#036358"
                       >
                       <v-card-actions>
-                            <v-btn icon><v-icon>mdi-cart</v-icon></v-btn>
-                            <v-btn icon><v-icon>mdi-eye</v-icon></v-btn>
+                            <v-btn icon><NuxtLink to="/shoppingCart" style="text-decoration: none; color: inherit;"><v-icon>mdi-cart</v-icon></NuxtLink></v-btn>
+                            <v-btn icon><NuxtLink to="/Details" style="text-decoration: none; color: inherit;"><v-icon>mdi-eye</v-icon></NuxtLink></v-btn>
                         </v-card-actions>
                       </v-overlay>
                     </v-fade-transition>

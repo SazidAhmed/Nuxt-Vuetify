@@ -61,7 +61,7 @@
               </template>
           </v-simple-table>
           </v-card>
-          <v-btn class="mt-5">Proceed to checkout</v-btn>
+          <v-btn class="mt-5"><NuxtLink to="/checkOut" style="text-decoration: none; color: inherit;">Proceed to checkout</NuxtLink></v-btn>
          </div>
       </div>
     </v-app>

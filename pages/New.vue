@@ -5,25 +5,26 @@
         <v-col cols="auto" >
          <v-row wrap justify-space-between>
            <v-col cols="auto" >
-              <v-col v-for="cat in cats" :key="cat.id" cols="12">
+              <v-col cols="12">
              <v-img
                           class="white--text align-end"
                           height="100%"
                           width="400"
-                          :src="cat.src"
+                          :src="activePic"
                         >
                         </v-img>
               </v-col>
            </v-col>
              <v-col cols="auto" >
                <v-col cols="auto">
-                 <v-col v-for="top in tops" :key="top.id" cols="8" md="4">
+                 <v-col v-for="(picture, index) in pictures" :key="picture.name" cols="8" md="4">
                         <v-img
                           class="white--text align-end"
                           height="100%"
                           width="400"
-                          :src="top.src"
-                        >
+                          :src="pictures" @mouseonover="changeActivePic(index)"
+                          :class="{ active: indexOfActive ? true : false}">
+
                         </v-img>
                 </v-col>
              </v-col>
@@ -70,33 +71,22 @@
 
 <script>
 export default {
-  name: "Login",
-  data: () => ({
-
-      cats: [
-          {
-            id: 1,
-            src: require("../assets/images/feature1.jpg")
-          }
-        ],
-      tops: [
-          {
-            id: 1,
-            src: require("../assets/images/feature1.jpg")
-          },
-          {
-            id: 2,
-            src: require("../assets/images/feature7.jpg")
-          },
-          {
-            id: 3,
-            src: require("../assets/images/feature6.jpg")
-          }
-        ],
-
-  }),
-
-
+ data() {
+    return {
+      indexOfActive: 0,
+      activePic: 'https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg',
+      pictures: [
+          'https://stylesatlife.com/wp-content/uploads/2019/07/15-Attractive-2-Years-Girl-Dress-Designs-for-Birthday.jpg',
+          'https://stylesatlife.com/wp-content/uploads/2019/07/Top-15-Cute-4-Years-Girl-Dress-Designs-for-Occasion.jpg',
+          'https://stylesatlife.com/wp-content/uploads/2020/01/15-Beautiful-and-Best-14-Years-Old-Girl-Dress-Designs.jpg',
+      ]
+    }
+ },
+ methods: {
+   changeActivePic(index) {
+     this.activePic = this.pictures[index];
+   }
+ }
 };
 </script>
 <style>
