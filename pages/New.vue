@@ -65,7 +65,60 @@
      <h2 class="text-center">Features Product</h2>
    </v-container>
 
+ <v-container
+    fluid
 
+  >
+    <v-row
+    >
+      <v-col cols="12">
+        <v-btn @click="show = !show">
+          toggle
+        </v-btn>
+      </v-col>
+
+
+        <v-tooltip
+          v-model="show"
+          top
+        >
+
+
+      <div class="mt-10" width="400px">
+       <span>Programmatic tooltip</span>
+        <v-textarea
+          filled
+          name="input-7-4"
+          label="Filled textarea"
+          value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+        ></v-textarea>
+      </div>
+
+        </v-tooltip>
+
+
+    </v-row>
+  </v-container>
+  <!---checkbox---->
+  <v-checkbox
+      v-model="v0"
+      label="Visible"
+    ></v-checkbox>
+    <v-banner
+      v-model="v0"
+      single-line
+      transition="slide-y-transition"
+    >
+      <div class="mt-10" width="250px" >
+       <span>Programmatic tooltip</span>
+        <v-textarea
+          filled
+          name="input-7-4"
+          label="Filled textarea"
+          value="The Woodman set to work at once, and so sharp was his axe that the tree was soon chopped nearly through."
+        ></v-textarea>
+      </div>
+    </v-banner>
   </v-container>
 </template>
 
@@ -73,6 +126,8 @@
 export default {
  data() {
     return {
+      v0: false,
+      show: false,
       indexOfActive: 0,
       activePic: 'https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg',
       pictures: [
