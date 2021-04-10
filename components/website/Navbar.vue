@@ -15,10 +15,10 @@
             <v-spacer></v-spacer>
             <v-toolbar-items class="hidden-sm-and-down mr-10">
                 <v-btn plain><v-icon>mdi-home</v-icon> <NuxtLink to="/" style="text-decoration: none; color: inherit;">Home</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/shop" style="text-decoration: none; color: inherit;">Shop</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/login" style="text-decoration: none; color: inherit;">Login</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/register" style="text-decoration: none; color: inherit;">Register</NuxtLink></v-btn>
-                <v-btn plain><NuxtLink to="/extra" style="text-decoration: none; color: inherit;">Extra</NuxtLink></v-btn>
+                <v-btn plain><v-icon>mdi-storefront</v-icon><NuxtLink to="/shop" style="text-decoration: none; color: inherit;">Shop</NuxtLink></v-btn>
+                <v-btn plain><v-icon>mdi-login</v-icon><NuxtLink to="/login" style="text-decoration: none; color: inherit;">Login</NuxtLink></v-btn>
+                <v-btn plain><v-icon>mdi-account</v-icon><NuxtLink to="/register" style="text-decoration: none; color: inherit;">Register</NuxtLink></v-btn>
+                <v-btn plain><v-icon>mdi-home</v-icon><NuxtLink to="/extra" style="text-decoration: none; color: inherit;">Extra</NuxtLink></v-btn>
             </v-toolbar-items>
         </v-toolbar>
         <!--Top Navbar End-->
