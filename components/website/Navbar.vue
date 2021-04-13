@@ -85,20 +85,36 @@
          <v-list dense>
           <v-list-item link>
             <v-list-item-action>
-              <v-icon>mdi-home</v-icon>
+              <v-icon>mdi-shopping basket</v-icon>
             </v-list-item-action>
             <v-list-item-content>
-              <v-list-item-title>Home</v-list-item-title>
+              <v-list-item-title>MY BAG</v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-            <v-list-item link>
-               <v-list-item-action>
-                 <v-icon>mdi-email</v-icon>
-              </v-list-item-action>
-              <v-list-item-content>
-                 <v-list-item-title>Contact</v-list-item-title>
-              </v-list-item-content>
-          </v-list-item>
+          <v-divider></v-divider>
+          <v-container class="grey lighten-5">
+    <v-row no-gutters>
+      <v-col>
+        <v-img width="100" height="200" src="https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg"></v-img>
+      </v-col>
+      <v-col order="1">
+            <v-col xs="2">
+            <div>$ 3.00</div>
+          </v-col>
+          <v-col >
+            <div>T-shirt</div>
+          </v-col>
+          <v-col xs="2">
+            <div class="caption grey--text">XXL</div>
+
+          </v-col>
+
+      </v-col>
+      <v-col order="1">
+      <div class="mt-5 text-center">Qty: 1</div>
+      </v-col>
+    </v-row>
+  </v-container>
         </v-list>
       </v-navigation-drawer>
         <!--Sub Navbar End-->
@@ -114,7 +130,9 @@ export default {
      data: () => ({
             right: null,
             right: false,
+
           }),
+
 }
 </script>
 
