@@ -1,0 +1,38 @@
+﻿echo "# Jobgo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/SazidAhmed/MultiVendorShop.git
+git push -u origin main
+
+…or push an existing repository from the command line
+git remote add origin https://github.com/SazidAhmed/Jobgo.git
+git branch -M main
+
+git add .
+git commit -m "commit name"
+git push -u origin nupor
+
+
+
+..........................................................................
+
+cmdkey /delete:LegacyGeneric:target=git:https://github.com
+
+git config --global --unset user.name
+git config --global --unset user.email
+git config --global --unset credential.helper
+
+$ git add .
+git commit -m "first commit"
+
+
+$ git remote add upstream https://github.com/Restaurants-Self-Order/Backend.git
+
+   
+first e 2ta open korte hbe
+
+$ git fetch upstream master
+  git pull upstream master
+

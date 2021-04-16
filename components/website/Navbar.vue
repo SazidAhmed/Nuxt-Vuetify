@@ -81,7 +81,7 @@
 
             </div>
         </v-toolbar>
-       <v-navigation-drawer v-model="right" fixed right temporary>
+       <v-navigation-drawer v-model="right" fixed right temporary width="300">
          <v-list dense>
           <v-list-item link>
             <v-list-item-action>
@@ -95,7 +95,7 @@
           <v-container class="grey lighten-5">
     <v-row no-gutters>
       <v-col>
-        <v-img width="100" height="200" src="https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg"></v-img>
+        <v-img width="100" height="180" src="https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg"></v-img>
       </v-col>
       <v-col order="1">
             <v-col xs="2">
@@ -115,6 +115,29 @@
       </v-col>
     </v-row>
   </v-container>
+   <div class="row">
+
+          <v-simple-table class="text-center mt-10">
+              <template v-slot:default>
+                <tbody>
+                  <tr
+                    v-for="item in items"
+                    :key="item.id"
+                  >
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.prize }}</td>
+                  </tr>
+                </tbody>
+              </template>
+          </v-simple-table>
+
+         </div>
+         <v-btn rounded color="primary"  dark class=" mt-10">
+
+             <NuxtLink to="/checkOut" style="text-decoration: none; color: inherit;" >Checkout</NuxtLink>
+         </v-btn>
+
+
         </v-list>
       </v-navigation-drawer>
         <!--Sub Navbar End-->
@@ -127,12 +150,28 @@ export default {
     props: {
             source: String,
          },
-     data: () => ({
-            right: null,
-            right: false,
+     data () {
+       return {
+             right: null,
+             right: false,
 
-          }),
+          items: [
+                        {
+                          name: 'Subtotal',
+                          prize:  4000,
+                        },
+                        {
+                          name: 'Discount',
+                          prize: 100
+                        },
+                        {
+                          name: 'Total Payment',
+                          prize: 3900
+                        },
 
+            ],
+            }
+     },
 }
 </script>
 
