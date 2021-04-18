@@ -4,11 +4,9 @@
       <Navbar />
       <!-- Navbar End-->
       <v-main>
-          <v-container>
               <!-- Main content -->
               <nuxt />
               <!--content End-->
-          </v-container>
       </v-main>
       <!-- footer -->
       <Footer />
