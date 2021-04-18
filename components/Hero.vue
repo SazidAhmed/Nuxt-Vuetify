@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-10 pb-15">
+    <div class="pb-15">
       <!-- slider  -->
         <v-carousel cycle hide-delimiters>
           <v-carousel-item

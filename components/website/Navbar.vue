@@ -1,177 +1,160 @@
 <template>
-    <div>
-        <!--Top Navbar-->
-        <v-toolbar flat class="mainHeader" color="grey lighten-4">
-            <v-toolbar-title class="ml-5 hidden-sm-and-down">
-                <v-btn plain>
-                    <v-icon class="mr-1">mdi-phone</v-icon>
-                    01706494553
-                </v-btn>
-                <v-btn plain>
-                    <v-icon class="mr-1"> mdi-email</v-icon>
-                    oceanta@gmail.com
-                </v-btn>
-            </v-toolbar-title>
-            <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down mr-10">
-                <v-btn plain><v-icon>mdi-home</v-icon> <NuxtLink to="/" style="text-decoration: none; color: inherit;">Home</NuxtLink></v-btn>
-                <v-btn plain><v-icon>mdi-storefront</v-icon><NuxtLink to="/shop" style="text-decoration: none; color: inherit;">Shop</NuxtLink></v-btn>
-                <v-btn plain><v-icon>mdi-login</v-icon><NuxtLink to="/login" style="text-decoration: none; color: inherit;">Login</NuxtLink></v-btn>
-                <v-btn plain><v-icon>mdi-account</v-icon><NuxtLink to="/register" style="text-decoration: none; color: inherit;">Register</NuxtLink></v-btn>
-                <v-btn plain><v-icon>mdi-home</v-icon><NuxtLink to="/extra" style="text-decoration: none; color: inherit;">Extra</NuxtLink></v-btn>
-            </v-toolbar-items>
-        </v-toolbar>
-        <!--Top Navbar End-->
-        <!--Sub Navbar-->
-        <v-toolbar flat color="grey lighten-4">
-            <v-toolbar-title class="ml-10 hidden-sm-and-down">LOGO</v-toolbar-title>
-               <div class="hidden-md-and-up">
-                <v-menu offset-y>
-                <template v-slot:activator="{ on }">
-                    <v-app-bar-nav-icon v-on="on"></v-app-bar-nav-icon>
-                </template>
-                <v-list class="responsiveMenu">
-                    <v-list-item>
-                    <v-list-item-title><router-link to="/">Home</router-link></v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                    <v-list-item-title><router-link to="/shop">Shop</router-link></v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                    <v-list-item-title><router-link to="/login">Login</router-link></v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title><router-link to="/register">Register</router-link></v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title><router-link to="/register">Profile</router-link></v-list-item-title>
-                    </v-list-item>
-                    <v-list-item>
-                        <v-list-item-title><router-link to="/extra">Extra</router-link></v-list-item-title>
-                    </v-list-item>
-                </v-list>
-                </v-menu>
-            </div>
-            <v-spacer></v-spacer>
-            <div class="hidden-md-and-up ml-10">
-                <v-btn text>
-                   <h2>Logo</h2>
-                </v-btn>
-            </div>
-            <v-spacer></v-spacer>
-            <v-toolbar-items class="hidden-sm-and-down">
-                <v-btn plain>
-                    <v-text-field
-                        class="mt-5"
-                        prepend-inner-icon="mdi-magnify"
-                        placeholder="Search Here"
-                    ></v-text-field>
-                </v-btn>
-                <v-btn plain>
-                    <v-icon class="mr-1">mdi-account</v-icon>
-                    Profile
-                </v-btn>
-                <v-btn plain class="mr-10" @click.stop="right = !right">
-                    <v-icon class="mr-1">mdi-cart</v-icon>
-                    my cart
-                </v-btn>
-            </v-toolbar-items>
-            <div class="hidden-md-and-up">
-              <v-btn @click.stop="right = !right"><v-icon>mdi-cart</v-icon>my cart</v-btn>
+  <div>
+    <!--Top Navbar-->
+    <v-toolbar flat class="mainHeader hidden-sm-and-down" color="grey lighten-4">
+      <!-- desktop -->
+      <v-toolbar-title class="">
+        <v-toolbar-title class="ml-10 hidden-sm-and-down"><span>LOGO</span></v-toolbar-title>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <!-- desktop -->
+      <v-toolbar-items class="flex justify-end mt-5">
+        <div>
+          <NuxtLink to="/" style="text-decoration: none; color: inherit;">
+            <v-btn plain><v-icon>mdi-home</v-icon> Home </v-btn>
+          </NuxtLink>
+          <NuxtLink to="/shop" style="text-decoration: none; color: inherit;">
+            <v-btn plain><v-icon>mdi-storefront</v-icon>Shop</v-btn>
+          </NuxtLink>
+          <NuxtLink to="/login" style="text-decoration: none; color: inherit;">
+            <v-btn plain v-if="!loggedIn"><v-icon>mdi-login</v-icon>Login</v-btn>
+          </NuxtLink>
+          <NuxtLink to="/profile" style="text-decoration: none; color: inherit;">
+            <v-btn plain v-if="loggedIn"><v-icon>mdi-account</v-icon>Profile</v-btn>
+          </NuxtLink>
+        </div>
+        <div>
+          <v-btn plain class="" @click.stop="right = !right"><v-icon class="mr-1">mdi-cart</v-icon>my cart</v-btn>
+        </div>
+      </v-toolbar-items>
+    </v-toolbar>
+    <!--Top Navbar End-->
 
-            </div>
-        </v-toolbar>
-       <v-navigation-drawer v-model="right" fixed right temporary width="300">
-         <v-list dense>
-          <v-list-item link>
-            <v-list-item-action>
-              <v-icon>mdi-shopping basket</v-icon>
-            </v-list-item-action>
-            <v-list-item-content>
-              <v-list-item-title>MY BAG</v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-          <v-divider></v-divider>
-          <v-container class="grey lighten-5">
-    <v-row no-gutters>
-      <v-col>
-        <v-img width="100" height="180" src="https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg"></v-img>
-      </v-col>
-      <v-col order="1">
-            <v-col xs="2">
-            <div>$ 3.00</div>
+    <!--mobile Nav-->
+    <v-toolbar flat class="mainHeader hidden-md-and-up" color="grey lighten-4">
+      <v-toolbar-title class="">
+        <v-toolbar-title class="ml-10"><span>LOGO</span></v-toolbar-title>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <v-toolbar-items class="flex justify-end mt-5">
+        <div>
+          <NuxtLink to="/login" style="text-decoration: none; color: inherit;">
+            <v-btn plain v-if="!loggedIn"><v-icon>mdi-login</v-icon>Login</v-btn>
+          </NuxtLink>
+          <NuxtLink to="/profile" style="text-decoration: none; color: inherit;">
+            <v-btn plain v-if="loggedIn"><v-icon>mdi-account</v-icon>Profile</v-btn>
+          </NuxtLink>
+        </div>
+        <div>
+          <v-btn plain class="" @click.stop="right = !right"><v-icon class="mr-1">mdi-cart</v-icon>my cart</v-btn>
+        </div>
+      </v-toolbar-items>
+    </v-toolbar>
+    <!--mobile Nav-->
+
+    <!-- <v-btn plain><v-text-field class="mt-5" prepend-inner-icon="mdi-magnify" placeholder="Search Here"></v-text-field></v-btn> -->
+    <!-- right sidebar -->
+    <v-navigation-drawer v-model="right" fixed right temporary width="300">
+      <v-list dense>
+      <v-list-item link>
+        <v-list-item-action>
+          <v-icon>mdi-shopping basket</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>MY BAG</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+      <v-container class="grey lighten-5">
+        <v-row no-gutters>
+          <v-col>
+            <v-img width="100" height="180" src="https://i.pinimg.com/originals/cc/ab/e5/ccabe55eba2e9419388c946addaa9f2d.jpg"></v-img>
           </v-col>
-          <v-col >
-            <div>T-shirt</div>
+          <v-col order="1">
+                <v-col xs="2">
+                <div>$ 3.00</div>
+              </v-col>
+              <v-col >
+                <div>T-shirt</div>
+              </v-col>
+              <v-col xs="2">
+                <div class="caption grey--text">XXL</div>
+              </v-col>
           </v-col>
-          <v-col xs="2">
-            <div class="caption grey--text">XXL</div>
-
+          <v-col order="1">
+          <div class="mt-5 text-center">Qty: 1</div>
           </v-col>
-
-      </v-col>
-      <v-col order="1">
-      <div class="mt-5 text-center">Qty: 1</div>
-      </v-col>
-    </v-row>
-  </v-container>
-   <div class="row">
-
-          <v-simple-table class="text-center mt-10">
-              <template v-slot:default>
-                <tbody>
-                  <tr
-                    v-for="item in items"
-                    :key="item.id"
-                  >
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.prize }}</td>
-                  </tr>
-                </tbody>
-              </template>
-          </v-simple-table>
-
-         </div>
-         <v-btn rounded color="primary"  dark class=" mt-10">
-
-             <NuxtLink to="/checkOut" style="text-decoration: none; color: inherit;" >Checkout</NuxtLink>
-         </v-btn>
-
-
-        </v-list>
-      </v-navigation-drawer>
-        <!--Sub Navbar End-->
-    </div>
+        </v-row>
+      </v-container>
+      <div class="row">
+        <v-simple-table class="text-center mt-10">
+            <template v-slot:default>
+              <tbody>
+                <tr
+                  v-for="item in items"
+                  :key="item.id"
+                >
+                  <td>{{ item.name }}</td>
+                  <td>{{ item.prize }}</td>
+                </tr>
+              </tbody>
+            </template>
+        </v-simple-table>
+      </div>
+      <v-btn rounded color="primary"  dark class=" mt-10">
+          <NuxtLink to="/checkOut" style="text-decoration: none; color: inherit;" >Checkout</NuxtLink>
+      </v-btn>
+    </v-list>
+    </v-navigation-drawer>
+    <!--Sub Navbar End-->
+     <!-- right sidebar -->
+    <v-navigation-drawer v-model="left" fixed left temporary width="300">
+      <v-list dense>
+      <v-list-item link>
+        <v-list-item-action>
+          <v-icon>mdi-shopping basket</v-icon>
+        </v-list-item-action>
+        <v-list-item-content>
+          <v-list-item-title>Logo</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
+    </v-list>
+    </v-navigation-drawer>
+    <!--Sub Navbar End-->
+  </div>
 </template>
 
 <script>
 export default {
-    name: "Navbar",
-    props: {
-            source: String,
-         },
-     data () {
-       return {
-             right: null,
-             right: false,
+  name: "Navbar",
+  props:{
+    source: String,
+    },
+    data () {
+      return {
+      right: null,
+      right: false,
+      left: null,
+      left: false,
+      loggedIn:false,
+      items: [
+          {
+            name: 'Subtotal',
+            prize:  4000,
+          },
+          {
+            name: 'Discount',
+            prize: 100
+          },
+          {
+            name: 'Total Payment',
+            prize: 3900
+          },
 
-          items: [
-                        {
-                          name: 'Subtotal',
-                          prize:  4000,
-                        },
-                        {
-                          name: 'Discount',
-                          prize: 100
-                        },
-                        {
-                          name: 'Total Payment',
-                          prize: 3900
-                        },
-
-            ],
-            }
-     },
+      ],
+    }
+    },
 }
 </script>
 
@@ -180,4 +163,8 @@ export default {
     text-decoration: none;
     color: grey;
  }
+ span:hover {
+  cursor: pointer;
+  color: tomato;
+}
 </style>
