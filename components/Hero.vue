@@ -1,7 +1,6 @@
 <template>
-    <div>
+    <div class="mt-10 pb-15">
       <!-- slider  -->
-      <v-row class="mt-2 mb-2">
         <v-carousel cycle hide-delimiters>
           <v-carousel-item
             v-for="(item,i) in items"
@@ -23,7 +22,7 @@
               </v-row>
           </v-carousel-item>
         </v-carousel>
-      </v-row>
+
     </div>
 </template>
 
@@ -34,13 +33,13 @@ export default {
     return {
       items: [
         {
-          src: require("../assets/images/slider-3.jpg"),
+          src: "https://i.ytimg.com/vi/52kjz0YsG-c/maxresdefault.jpg",
         },
         {
-          src: require("../assets/images/slider-images.jpg"),
+          src: "https://i.ytimg.com/vi/Dc5R1DPcHqw/maxresdefault.jpg",
         },
         {
-          src: require("../assets/images/slider2.jpg"),
+          src: "https://i.ytimg.com/vi/PZlX8tRxQ7o/maxresdefault.jpg",
         }
       ]
     };

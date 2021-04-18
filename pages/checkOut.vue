@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="mt-5 pa-10">
     <v-row no-gutters >
       <v-col cols="12" sm="6" md="6">
         <!---colum1---->
