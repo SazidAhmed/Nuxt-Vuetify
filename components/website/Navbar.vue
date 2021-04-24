@@ -151,7 +151,6 @@ export default {
             name: 'Total Payment',
             prize: 3900
           },
-
       ],
     }
     },

@@ -15,8 +15,8 @@
                 justify="center"
               >
                 <div class="display-3">
-                  <h1 >new pic</h1>
-                  <p>thats the new style</p>
+                  <h1 class="ma-3">new pic</h1>
+                  <p class=" mt-5 ma-3">thats the new style</p>
                   <v-btn>Shop Now</v-btn>
                 </div>
               </v-row>
@@ -33,13 +33,16 @@ export default {
     return {
       items: [
         {
-          src: "https://i.ytimg.com/vi/52kjz0YsG-c/maxresdefault.jpg",
+          src:  require("../assets/images/slider12.jpg"),
         },
         {
-          src: "https://i.ytimg.com/vi/Dc5R1DPcHqw/maxresdefault.jpg",
+          src: require("../assets/images/slider11.jpg"),
         },
         {
-          src: "https://i.ytimg.com/vi/PZlX8tRxQ7o/maxresdefault.jpg",
+          src: require("../assets/images/slider13.jpg"),
+        },
+        {
+          src: require("../assets/images/slider10.jpg"),
         }
       ]
     };
