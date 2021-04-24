@@ -12,7 +12,7 @@ git branch -M main
 
 git add .
 git commit -m "commit name"
-git push -u origin nupor
+git push -u origin nupor+
 
 
 
@@ -30,7 +30,7 @@ git commit -m "first commit"
 
 $ git remote add upstream https://github.com/Restaurants-Self-Order/Backend.git
 
-   
+
 first e 2ta open korte hbe
 
 $ git fetch upstream master
