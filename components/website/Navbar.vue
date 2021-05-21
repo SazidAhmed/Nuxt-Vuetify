@@ -2,20 +2,34 @@
   <div>
     <!--Top Navbar-->
     <v-toolbar flat class="mainHeader hidden-sm-and-down" color="grey lighten-4">
-      <!-- desktop -->
-      <v-toolbar-title class="">
-        <v-toolbar-title class="ml-10 hidden-sm-and-down"><span>LOGO</span></v-toolbar-title>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <!-- desktop -->
-      <v-toolbar-items class="flex justify-end mt-5">
-        <div>
+      <v-toolbar-items class="flex justify-start mt-5">
+      <div>
           <NuxtLink to="/" style="text-decoration: none; color: inherit;">
             <v-btn plain><v-icon>mdi-home</v-icon> Home </v-btn>
           </NuxtLink>
           <NuxtLink to="/shop" style="text-decoration: none; color: inherit;">
             <v-btn plain><v-icon>mdi-storefront</v-icon>Shop</v-btn>
           </NuxtLink>
+           <NuxtLink to="/shop" style="text-decoration: none; color: inherit;">
+            <v-btn plain><v-icon>mdi-storefront</v-icon>Pages</v-btn>
+          </NuxtLink>
+           <NuxtLink to="/shop" style="text-decoration: none; color: inherit;">
+            <v-btn plain><v-icon>mdi-storefront</v-icon>Element</v-btn>
+          </NuxtLink>
+        </div>
+
+      </v-toolbar-items>
+      <!-- desktop -->
+      <v-toolbar-title class="">
+        <v-toolbar-title class="ml-10 hidden-sm-and-down"><span>OCENTA</span></v-toolbar-title>
+      </v-toolbar-title>
+      <v-spacer></v-spacer>
+      <!-- desktop -->
+      <v-toolbar-items class="flex justify-end mt-5">
+        <div>
+          <v-icon class="mr-1">
+            mdi-heart
+          </v-icon>
           <NuxtLink to="/login" style="text-decoration: none; color: inherit;">
             <v-btn plain v-if="!loggedIn"><v-icon>mdi-login</v-icon>Login</v-btn>
           </NuxtLink>

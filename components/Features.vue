@@ -18,6 +18,7 @@
                                  <div>{{ item.name }}</div>
                                  <div>{{item.category}}</div>
                               </v-card-text>
+                              <v-card-action><v-icon>mdi-home</v-icon></v-card-action>
 
                               <v-fade-transition>
                             <v-overlay

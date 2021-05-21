@@ -1,27 +1,27 @@
 <template>
-    <div class="pb-15">
+    <div class="pb-15 mb-4">
       <!-- slider  -->
-        <v-carousel cycle hide-delimiters>
-          <v-carousel-item
-            v-for="(item,i) in items"
-            :key="i"
-            :src="item.src"
-            reverse-transition="fade-transition"
-            transition="fade-transition"
+      <v-main class="slider">
+        <v-carousel
+            cycle
+            height="500"
+            hide-delimiter-background
+            show-arrows-on-hover
+
           >
-            <v-row
-                class="fill-height"
-                align="center"
-                justify="center"
-              >
-                <div class="display-3">
-                  <h1 class="ma-3">new pic</h1>
-                  <p class=" mt-5 ma-3">thats the new style</p>
-                  <v-btn>Shop Now</v-btn>
-                </div>
-              </v-row>
+          <v-carousel-item
+            v-for="(slide, i) in slides"
+            :key="i"
+            :src="slide.src"
+          >
+              <div id="row">
+                  <span>New pic</span>
+                  <h1>Thats the new pic</h1>
+                  <v-btn>shop now</v-btn>
+              </div>
           </v-carousel-item>
-        </v-carousel>
+      </v-carousel>
+    </v-main>
 
     </div>
 </template>
@@ -31,7 +31,7 @@ export default {
   name: "Hero",
   data() {
     return {
-      items: [
+      slides: [
         {
           src:  require("../assets/images/slider12.jpg"),
         },
@@ -49,3 +49,9 @@ export default {
   }
 };
 </script>
+<style scoped>
+ div#row {
+    margin-top: 60px;
+    padding: 100px;
+}
+</style>

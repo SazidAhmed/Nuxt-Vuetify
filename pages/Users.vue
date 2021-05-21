@@ -1,180 +1,181 @@
 <template>
     <v-app >
-        <v-container class="pt-10">
-            <!-- Data Table-->
-            <v-card color="cyan lighten-5">
-               <v-card-title>User List</v-card-title>
-                  <v-row>
-                    <v-col>
+       <v-container>
+         <!---first row for shopping Cart--->
 
-                    </v-col>
-                    <v-col>
-                    <v-card-title>
-                        <v-text-field v-model="search" append-icon="mdi-magnify" label="Search" single-line hide-details ></v-text-field>
-                        <v-btn medium @click="createItem()" color="light-blue" dark class="ma-2" right>
-                        <v-icon dark medium> mdi-plus </v-icon>Add New </v-btn>
-                    </v-card-title>
-                    </v-col>
-                  </v-row>
-                <!-- datatable -->
-                  <v-data-table :headers="headers" :items="desserts" :search="search" dark>
-                      <template v-slot:[`item.image`] ="{ item } ">
-                          <img :src="'assets/img/' + item.image" style="width: 60px; margin-top: 5px;" />
-                      </template>
-                      <template v-slot:[`item.actions`]="{ item }" >
-                            <v-icon small color="cyan" class="mr-2" @click="editItem(item)"> mdi-eye </v-icon>
-                            <v-icon small color="cyan" class="mr-2" @click="editItem(item)"> mdi-pencil </v-icon>
-                            <v-icon small color="red"  @click="deleteItem(item)"> mdi-delete </v-icon>
-                     </template>
-                  </v-data-table>
-                  <!-- End datatable -->
-            </v-card>
+    <v-row>
+      <v-col
+        cols="12"
+        md="6"
+      >
+      <h2>Shopping Cart</h2>
+      <!---2nd row for shopping cart---->
+     <v-main class="mb-10 pt-5">
+      <v-row>
+      <v-col
+        cols="auto"
+        md="4"
+      >
+        <v-img
 
-            <!-- Delete Modal -->
+          height="100"
+          max-width="100"
+          src="https://picsum.photos/id/11/500/300"
+        ></v-img>
+      </v-col>
 
-            <v-row justify="center">
-            <v-dialog
-                v-model="deleteDialog"
-                persistent
-                max-width="290"
-            >
-              <v-card>
-                <v-card-title class="headline">Confirm To Delete.</v-card-title>
-                  <v-card-text class=" text-h6 text-center"></v-card-text>
-                    <v-card-actions >
-                        <v-spacer></v-spacer>
-                        <v-btn
-                        color="red darken-1"
-                        text
-                        @click="deleteDialog = false"
-                        >
-                        Cancel
-                        </v-btn>
-                        <v-btn
-                        color="green darken-1"
-                        text
-                        @click="deleteDialog = false"
-                        >
-                        Confirm
-                        </v-btn>
-                    </v-card-actions>
-              </v-card>
-            </v-dialog>
-            </v-row>
 
-            <!-- Create Modal -->
 
-      <v-row justify="center">
-        <v-dialog
-                v-model="createDialog"
-                persistent
-                max-width="600px"
-            >
-          <v-card>
-              <v-card-title>
-                 <span class="headline">New Category</span>
-              </v-card-title>
-               <v-card-text>
-                 <v-container>
-                    <v-row>
-                        <v-col cols="12" sm="12" md="7">
-                              <v-text-field
-                                  label="title"
-                                  hint="Enter Name Of Title Here"
-                              ></v-text-field>
-                              <v-text-field
-                                  label="tagline"
-                                  hint="Enter Name Of TagLine Here"
-                              ></v-text-field>
-                              <v-text-field
-                                  label="displaysection"
-                                  hint="Enter Name Of displaysection Here"
-                              ></v-text-field>
-                        </v-col>
-                        <v-col cols="12" sm="12" md="5" >
-                          <v-file-input  accept="image/*" label="Upload Image" ></v-file-input>
-                        </v-col>
-                    </v-row>
-                 </v-container>
-              </v-card-text>
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                    <v-btn
-                        color="red darken-1"
-                        text
-                        @click="createDialog = false"
-                        >
-                        Cancel
-                    </v-btn>
-                    <v-btn
-                        color="green darken-1"
-                        text
-                        @click="createDialog = false"
-                        >
-                        Submit
-                    </v-btn>
-                </v-card-actions>
-          </v-card>
-        </v-dialog>
-      </v-row>
+      <v-col md="6">
+        <h3> Modern Dreeses</h3>
+        <v-spacer></v-spacer>
+        <span>Qty</span>
 
-     </v-container>
+      </v-col>
+
+      <v-col md="2">
+        <v-icon>mdi-window-close</v-icon>
+        <v-spacer></v-spacer>
+        <span>208S</span>
+
+      </v-col>
+
+    </v-row>
+
+
+</v-main>
+<v-divider ></v-divider>
+<div class="text-center pt-5">
+    <v-btn
+      class="ma-2"
+      outlined
+      width="250"
+    >
+      Continue Shopping
+    </v-btn>
+       <v-btn
+      class="ma-2"
+      outlined
+      width="250"
+    >
+      Update Cart
+    </v-btn>
+  </div>
+     </v-col>
+
+       <!---2nd row for shopping cart---->
+      <v-col
+        cols="6"
+        md="4"
+      >
+        <h2>Cart Totals</h2>
+        <!---First Cart--->
+        <v-card outlined>
+        <div class="ma-4">
+          <v-icon>mdi-heart</v-icon>
+          <small>Add Cupon</small>
+        </div>
+        <div class="ma-2">
+         <v-select
+          :items="items"
+          filled
+          label="Filled style"
+          dense
+        ></v-select>
+        </div>
+        <div class="text-center ma-2">
+        <v-btn block  color="black white--text">
+    Block Button
+  </v-btn>
+        </div>
+        </v-card>
+        <!---First Cart--->
+        <!---Second Cart--->
+                <v-card outlined>
+        <v-card-actions class="justify-space-between">
+      <v-btn text>
+        Sub Totals
+      </v-btn>
+      <v-btn
+        color="primary"
+        text
+      >
+       320.0
+      </v-btn>
+    </v-card-actions>
+    <v-divider></v-divider>
+     <v-container fluid>
+    <p>Shipping</p>
+
+    <v-radio-group
+      v-model="radios"
+      mandatory
+    >
+    <v-card-actions class="justify-space-between">
+      <v-radio
+        label="Standard"
+        value="Standard"
+      ></v-radio>
+       <v-btn
+        color="primary"
+        text
+      >
+       120.0
+      </v-btn>
+      </v-card-actions>
+      <v-card-actions class="justify-space-between">
+      <v-radio
+        label="Express"
+        value="Express"
+      ></v-radio>
+       <v-btn
+        color="primary"
+        text
+      >
+       100.0
+      </v-btn>
+      </v-card-actions>
+    </v-radio-group>
+
+    <p>Shipping to CA, Bangladesh</p>
+    <v-select
+          :items="teams"
+          label="Standard"
+        ></v-select>
+  </v-container>
+    <v-card-actions class="justify-space-between">
+      <v-btn text>
+        Totals
+      </v-btn>
+      <v-btn
+        color="primary"
+        text
+      >
+       540.0
+      </v-btn>
+    </v-card-actions>
+        <div class="text-center ">
+        <v-btn block  color="black white--text">
+    Proceed To Checkout
+  </v-btn>
+        </div>
+        </v-card>
+        <!---Second Cart--->
+
+      </v-col>
+    </v-row>
+
+    <!---first row---->
+  </v-container>
   </v-app>
 </template>
-
 <script>
-    export default {
-        data () {
-        return {
-            search: '',
-            createDialog:false,
-            deleteDialog: false,
-            headers: [
-                { text: 'Index', align: 'start', sortable: true, value: 'id'},
-                { text: 'Name', align: 'start', sortable: false, value: 'name'},
-                { text: 'Email', align: 'start', sortable: true, value: 'email'},
-                { text: 'Mobile', align: 'start', sortable: true, value: 'mobile'},
-                { text: 'Address', align: 'start', sortable: true, value: 'address'},
-                { text: 'Role', align: 'start', sortable: true, value: 'role'},
-                { text: 'Actions', value: 'actions', sortable: false },
-            ],
-            desserts: [
-                {
-                    id: 1,
-                    name: 'Afrin',
-                    email: 'afrin@gmail.com',
-                    mobile: '01200354255',
-                    address: 'Dhaka',
-                    role: 'Admin'
-                },
-                {
-                    id: 1,
-                    name: 'Sarker',
-                    email: 'sarker@gmail.com',
-                    mobile: '01200354355',
-                    address: 'Tongi',
-                    role: 'Customer'
-                },
-
-            ],
-        }
-    },
-
-        methods:{
-            createItem() {
-                this.createDialog = true;
-            },
-            editItem (item) {
-                this.createDialog = true;
-                console.log(item.id);
-                console.log(item.name);
-            },
-
-            deleteItem (item) {
-                this.deleteDialog = true;
-                console.log(item.id);
-                console.log(item.name);
-            },
-        }
-    }
+  export default {
+    data: () => ({
+      items: ['A', 'B', 'C', 'D'],
+      teams: ['Bangladesh', 'America', 'Chaina', 'Malyasia'],
+       radios: null,
+    }),
+  }
 </script>
+
