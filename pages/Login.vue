@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-content>
+    <v-main>
       <v-container fluid>
          <v-row>
             <v-col cols="12" sm="12" md="12">
@@ -16,11 +16,11 @@
                           <v-card elevation="0">
                               <v-img src="https://www.designevo.com/res/templates/thumb_small/pink-dress-and-clothing-brand.png" alt="" contain height="200"></v-img>
                             <v-card-text>
-                              <v-form>
-                                  <v-text-field label="Enter your email" name="email" prepend-inner-icon="mdi-account" type="email" class="rounded-0" outlined></v-text-field>
-                                     <v-text-field label="Enter your password" name="password" prepend-inner-icon="mdi-lock" type="password" suffix="| Forgot?" class="rounded-0" outlined></v-text-field>
+                              <v-form @submit.prevent="handleSubmit">
+                                  <v-text-field label="Enter your email" name="email" v-model="email" prepend-inner-icon="mdi-account" type="email" class="rounded-0" outlined></v-text-field>
+                                     <v-text-field label="Enter your password" v-model="password" name="password" prepend-inner-icon="mdi-lock" type="password" suffix="| Forgot?" class="rounded-0" outlined></v-text-field>
                                         <div class="text-right">
-                                          <v-btn color="primary" dark>Log In</v-btn>
+                                          <v-btn color="primary" type="handleSubmit" dark>Log In</v-btn>
                                         </div>
                                       <v-card-actions class="text--secondary">
                                           <v-checkbox color="#000000" label="Remember me"></v-checkbox>
@@ -38,16 +38,28 @@
             </v-col>
          </v-row>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 <script>
-
-export default {
-  components: {
+  export default {
+    data () {
+      return {
+          email: null,
+          password: null,
+      }
   },
-  mthods: {
-
+  methods: {
+        handleSubmit() {
+        // validate password
+        this.passwordError = this.password.length > 5 ?
+          '' : 'Password must be at least 6 characters long'
+        if (!this.passwordError) {
+          // make request to database to save user
+          console.log('email: ', this.email)
+          console.log('password: ', this.password)
+        }
+      }
   }
 
 }

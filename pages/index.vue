@@ -1,19 +1,16 @@
 <template>
-  <v-main>
+  <v-container>
     <Hero />
     <Gallery />
     <LatestPost />
-    <Features />
-    <BestSellings />
-  </v-main>
+  </v-container>
 </template>
 
 <script>
 import Hero from "../components/Hero";
 import Gallery from "../components/Gallery";
 import LatestPost from "../components/LatestPost";
-import Features from "../components/Features";
-import BestSellings from "../components/BestSellings";
+
 
 
 export default {
@@ -23,8 +20,7 @@ export default {
     Hero,
     Gallery,
     LatestPost,
-    Features,
-    BestSellings
+
   }
 };
 </script>
