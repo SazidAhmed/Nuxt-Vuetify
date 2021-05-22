@@ -2,199 +2,170 @@
     <v-app >
        <v-container>
          <!---first row for shopping Cart--->
-
-    <v-row>
-      <v-col
-        cols="12"
-        md="6"
-      >
-      <h2>Shopping Cart</h2>
-      <!---2nd row for shopping cart---->
-     <v-main class="mb-10 pt-5">
-      <v-row>
-      <v-col
-        cols="auto"
-        md="4"
-      >
-        <v-img
-
-          height="100"
-          max-width="100"
-          src="https://picsum.photos/id/11/500/300"
-        ></v-img>
-      </v-col>
-
-
-
-      <v-col md="6">
-        <h3> Modern Dreeses</h3>
-        <v-spacer></v-spacer>
-        <span>Qty</span>
-
-      </v-col>
-
-      <v-col md="2">
-        <v-icon>mdi-window-close</v-icon>
-        <v-spacer></v-spacer>
-        <span>208S</span>
-
-      </v-col>
-
-    </v-row>
-
-</v-main>
-<v-divider ></v-divider>
-<div class="text-center pt-5">
-    <v-btn
-      class="ma-2"
-      outlined
-      width="250"
-    >
-      Continue Shopping
-    </v-btn>
-       <v-btn
-      class="ma-2"
-      outlined
-      width="250"
-    >
-      Update Cart
-    </v-btn>
-  </div>
-  <!---From--->
-<v-row justify="center">
-    <v-col
-      cols="12"
-      sm="10"
-      md="8"
-      lg="10"
-    >
-      <div ref="form">
-        <v-card-text>
-          <v-row>
-        <v-col
-          cols="12"
-          sm="6"
-        >
-
-         <v-text-field
-            ref="name"
-            v-model="name"
-            :rules="[() => !!name || 'This field is required']"
-            :error-messages="errorMessages"
-            label="First Name"
-            placeholder="John Doe"
-            required
-            solo-inverted
-          ></v-text-field>
-        </v-col>
-
-        <v-col
-          cols="12"
-          sm="6"
-        >
-          <v-text-field
-            ref="name"
-            v-model="name"
-            :rules="[() => !!name || 'This field is required']"
-            :error-messages="errorMessages"
-            label="Last Name"
-            placeholder="John Doe"
-            required
-            solo-inverted
-          ></v-text-field>
-        </v-col>
-      </v-row>
-          <v-text-field
-            ref="name"
-            v-model="name"
-            :rules="[() => !!name || 'This field is required']"
-            :error-messages="errorMessages"
-            label="Company Name"
-            required
-          ></v-text-field>
-          <v-text-field
-            ref="address"
-            v-model="address"
-            :rules="[
-              () => !!address || 'This field is required',
-              () => !!address && address.length <= 25 || 'Address must be less than 25 characters',
-              addressCheck
-            ]"
-            label="Address"
-            placeholder="Snowy Rock Pl"
-            counter="25"
-            required
-          ></v-text-field>
-          <v-text-field
-            ref="city"
-            v-model="city"
-            :rules="[() => !!city || 'This field is required', addressCheck]"
-            label="City"
-            placeholder="El Paso"
-            required
-          ></v-text-field>
-          <v-text-field
-            ref="state"
-            v-model="state"
-            :rules="[() => !!state || 'This field is required']"
-            label="State/Province/Region"
-            required
-            placeholder="TX"
-          ></v-text-field>
-          <v-text-field
-            ref="zip"
-            v-model="zip"
-            :rules="[() => !!zip || 'This field is required']"
-            label="ZIP / Postal Code"
-            required
-            placeholder="79938"
-          ></v-text-field>
-          <v-autocomplete
-            ref="country"
-            v-model="country"
-            :rules="[() => !!country || 'This field is required']"
-            :items="countries"
-            label="Country"
-            placeholder="Select..."
-            required
-          ></v-autocomplete>
-        </v-card-text>
-        <v-divider class="mt-12"></v-divider>
-        <v-card-actions>
-          <v-btn text>
-            Cancel
+        <v-row>
+          <v-col cols="12"  md="6" >
+            <h2>Shopping Cart</h2>
+          <!---2nd row for shopping cart---->
+            <v-main class="mb-10 pt-5">
+                <v-row>
+                  <v-col cols="auto" md="4">
+                      <v-img
+                        height="100"
+                        max-width="100"
+                        src="https://picsum.photos/id/11/500/300"
+                      ></v-img>
+                  </v-col>
+                  <v-col md="6">
+                      <h3> Modern Dreeses</h3>
+                        <v-spacer></v-spacer>
+                      <span>Qty</span>
+                  </v-col>
+                  <v-col md="2">
+                    <v-icon>mdi-window-close</v-icon>
+                      <v-spacer></v-spacer>
+                    <span>208S</span>
+                  </v-col>
+              </v-row>
+           </v-main>
+     <v-divider ></v-divider>
+      <div class="text-center pt-5">
+          <v-btn class="ma-2" outlined width="250">
+              Continue Shopping
           </v-btn>
-          <v-spacer></v-spacer>
-          <v-slide-x-reverse-transition>
-            <v-tooltip
-              v-if="formHasErrors"
-              left
-            >
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn
-                  icon
-                  class="my-0"
-                  v-bind="attrs"
-                  @click="resetForm"
-                  v-on="on"
-                >
-                  <v-icon>mdi-refresh</v-icon>
-                </v-btn>
-              </template>
-              <span>Refresh form</span>
-            </v-tooltip>
-          </v-slide-x-reverse-transition>
-          <v-btn
-            color="primary"
-            text
-            @click="submit"
-          >
-            Submit
+          <v-btn class="ma-2" outlined width="250">
+              Update Cart
           </v-btn>
-        </v-card-actions>
       </div>
-    </v-col>
-  </v-row>
+  <!---From--->
+      <v-row justify="center">
+          <v-col cols="12" sm="10" md="8" lg="10">
+            <div ref="form">
+              <v-card-text>
+                <v-row>
+                    <v-col
+                        cols="12"
+                        sm="6"
+                      >
+
+                      <v-text-field
+                          ref="name"
+                          v-model="name"
+                          :rules="[() => !!name || 'This field is required']"
+                          :error-messages="errorMessages"
+                          label="First Name"
+                          placeholder="John Doe"
+                          required
+                          solo-inverted
+                      ></v-text-field>
+                    </v-col>
+
+                    <v-col
+                      cols="12"
+                      sm="6"
+                    >
+                      <v-text-field
+                        ref="name"
+                        v-model="name"
+                        :rules="[() => !!name || 'This field is required']"
+                        :error-messages="errorMessages"
+                        label="Last Name"
+                        placeholder="John Doe"
+                        required
+                        solo-inverted
+                      ></v-text-field>
+                    </v-col>
+               </v-row>
+                  <v-text-field
+                    ref="name"
+                    v-model="name"
+                    :rules="[() => !!name || 'This field is required']"
+                    :error-messages="errorMessages"
+                    label="Company Name"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    ref="address"
+                    v-model="address"
+                    :rules="[
+                      () => !!address || 'This field is required',
+                      () => !!address && address.length <= 25 || 'Address must be less than 25 characters',
+                      addressCheck
+                    ]"
+                    label="Address"
+                    placeholder="Snowy Rock Pl"
+                    counter="25"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    ref="city"
+                    v-model="city"
+                    :rules="[() => !!city || 'This field is required', addressCheck]"
+                    label="City"
+                    placeholder="El Paso"
+                    required
+                  ></v-text-field>
+                  <v-text-field
+                    ref="state"
+                    v-model="state"
+                    :rules="[() => !!state || 'This field is required']"
+                    label="State/Province/Region"
+                    required
+                    placeholder="TX"
+                  ></v-text-field>
+                  <v-text-field
+                    ref="zip"
+                    v-model="zip"
+                    :rules="[() => !!zip || 'This field is required']"
+                    label="ZIP / Postal Code"
+                    required
+                    placeholder="79938"
+                  ></v-text-field>
+                  <v-autocomplete
+                    ref="country"
+                    v-model="country"
+                    :rules="[() => !!country || 'This field is required']"
+                    :items="countries"
+                    label="Country"
+                    placeholder="Select..."
+                    required
+                  ></v-autocomplete>
+              </v-card-text>
+             <v-divider class="mt-12"></v-divider>
+                <v-card-actions>
+                        <v-btn text>
+                          Cancel
+                        </v-btn>
+                   <v-spacer></v-spacer>
+                    <v-slide-x-reverse-transition>
+                        <v-tooltip
+                          v-if="formHasErrors"
+                          left
+                        >
+                          <template v-slot:activator="{ on, attrs }">
+                            <v-btn
+                              icon
+                              class="my-0"
+                              v-bind="attrs"
+                              @click="resetForm"
+                              v-on="on"
+                            >
+                              <v-icon>mdi-refresh</v-icon>
+                            </v-btn>
+                          </template>
+                          <span>Refresh form</span>
+                        </v-tooltip>
+                      </v-slide-x-reverse-transition>
+                      <v-btn
+                        color="primary"
+                        text
+                        @click="submit"
+                      >
+                        Submit
+                      </v-btn>
+                </v-card-actions>
+            </div>
+          </v-col>
+        </v-row>
 
      </v-col>
 
