@@ -70,7 +70,6 @@
            <v-btn class="mt-5" rounded color="deep-purple lighten-4"><NuxtLink to="/shoppingCart" style="text-decoration: none; color: inherit;">Add To Cart</NuxtLink></v-btn>
         </v-col>
       </v-row>
-<!---colums--->
       <v-container class="grey lighten-5">
           <!-- product description -->
           <div class="container">
@@ -81,9 +80,6 @@
               </div>
           </div>
       </v-container>
-        <v-container>
-          <h2 class="text-center">Features Product</h2>
-        </v-container>
   </v-container>
 </template>
 
@@ -95,21 +91,21 @@ export default {
       cats: [
           {
             id: 1,
-            src: require("../assets/images/feature1.jpg")
+            src: require("../../assets/images/feature1.jpg")
           }
         ],
       tops: [
           {
             id: 1,
-            src: require("../assets/images/feature1.jpg")
+            src: require("../../assets/images/feature1.jpg")
           },
           {
             id: 2,
-            src: require("../assets/images/feature7.jpg")
+            src: require("../../assets/images/feature7.jpg")
           },
           {
             id: 3,
-            src: require("../assets/images/feature6.jpg")
+            src: require("../../assets/images/feature6.jpg")
           }
         ],
          colors: ['green', 'purple', 'orange', 'indigo', 'red'],
